@@ -12,7 +12,7 @@ function loadPlayer()
       fireRate=15,
       projectileSpeed=35,
       ship = "standard",
-      lastShot=-15	
+      lastShot=-15
     }
   baseRocket = love.graphics.newMesh({{-20, -20, 0, 0, 85, 255, 0}, {20, -20, 0, 0, 85, 255, 0}, {20, 50, 0, 0, 85, 255, 0}, {-20, 50, 0, 0, 85, 255, 0}, {-40, -20, 0, 0, 0, 255, 191}, {-20, 20, 0, 0, 0, 255, 191}, {-20, -20, 0, 0, 0, 255, 191}, {40, -20, 0, 0, 0, 255, 191}, {20, 20, 0, 0, 0, 255, 191}, {20, -20, 0, 0, 0, 255, 191}}, "triangles", "static")
   baseRocket:setVertexMap(1, 2, 3, 1, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -244,20 +244,11 @@ function drawPlayer()
 		love.graphics.origin()
 end
 function testForEdges()
-		--[[if (player.death == true) then
-			if (player.x < 0 ||| player.x > scaleX * totalWidth || player.y < 0 || player.y > scaleY * totalHeight){
-				stopUpdate()
-				circle(player.x, player.y, 150, colors.explosionInner)
-				circle(player.x, player.y, 100, colors.explosionMid)
-				circle(player.x, player.y, 50, colors.explosionOuter)
-				if (scaleX < scaleY){
-					text((totalWidth / 2 - 400) * scaleX, totalHeight / 2 * scaleY, 100 * scaleX, "Game Over!", colors.gameOverText)
-				}
-				else {
-					text((totalWidth / 2 - 400) * scaleX , totalHeight / 2 * scaleY, 100 * scaleX, "Game Over!", colors.gameOverText)
-				}
-			}
-		else if (player.death == "warp"){--]]
+		if (player.death == true) then
+			if player.x < 0 or player.x > scaleX * totalWidth or player.y < 0 or player.y > scaleY * totalHeight then
+				gameOver()
+			end
+      else if player.death == "warp" then
 			if player.x < 0 then	
 				player.x = player.x + scaleX * totalWidth
 			end
@@ -270,5 +261,6 @@ function testForEdges()
 			if player.y > scaleY * totalHeight then
 				player.y = player.y - scaleY * totalHeight
 			end
-		--end
+		end
 	end
+end

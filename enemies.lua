@@ -23,7 +23,7 @@ function updateEnemies()
          end
       end
    end
-   if #enemies < 1 + enemiesKilled / 10 then
+   if #enemies < 0.1 + enemiesKilled / 10 then
       lastEnemySpawned = t
       spawnEnemy(50, 2)
    end

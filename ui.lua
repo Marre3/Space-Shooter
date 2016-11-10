@@ -22,7 +22,7 @@ function drawTextBoxes()
 		"y velocity:" .. player.yVelocity,
 		"x scale:" .. scaleX,
 		"y scale:" .. scaleY,
---		"death:" .. player.death,
+		"death:" .. player.death,
 		"ship:" .. player.ship,
 		"ship id:" .. player.shipNum,
 		"projectiles:" .. #projectiles,

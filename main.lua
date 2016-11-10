@@ -1,6 +1,6 @@
---		This game was made by Mauritz Sverredal!!!
--- 	Isak Gyllenstrand made the "isaks", "traditional, "dragon" and "dragonfly ships...!
---		The "regular isak" ship is a recolor of the "isaks" ship, colored by Mauritz!
+-- This game was made by Mauritz Sverredal!!!
+-- Isak Gyllenstrand made the "isaks", "traditional, "dragon" and "dragonfly ships...!
+-- The "regular isak" ship is a recolor of the "isaks" ship, colored by Mauritz!
 
 function love.load()
    require("player")
