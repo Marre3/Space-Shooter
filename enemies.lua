@@ -19,6 +19,9 @@ function updateEnemies()
                table.remove(enemies, i)
                table.remove(projectiles, l)
                enemiesKilled = enemiesKilled + 1
+               if enemiesKilled > highScore then
+                  highScore = enemiesKilled
+               end
             end
          end
       end

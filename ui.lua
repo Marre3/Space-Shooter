@@ -41,6 +41,7 @@ function drawTextBoxes()
 	end
    love.graphics.setColor(255, 170, 0)
    love.graphics.print("Score:" .. enemiesKilled, 0, totalHeight - 50)
+   love.graphics.print("High Score:" .. highScore, 0, totalHeight - 100)
 end
 function updateUI()
    keyUp = love.keyboard.isDown("up")
@@ -54,7 +55,9 @@ function drawUI()
 end
 function gameOver()
    function love.update()
-
+      if love.keyboard.isDown("r") then
+         reset()
+      end
    end
    function love.draw()
       drawUI()

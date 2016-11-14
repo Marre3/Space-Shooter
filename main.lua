@@ -7,7 +7,8 @@ function love.load()
    require("projectiles")
    require("enemies")
    require("ui")
-   love.window.setMode(0, 0, {resizable=true, vsync=true})
+   highScore = 0
+   love.window.setMode(0, 0,{resizable=true, vsync=true})
    fullscreen = false
    totalWidth = love.graphics.getWidth()
    totalHeight = love.graphics.getHeight()
@@ -80,4 +81,24 @@ function love.draw()
    drawEnemies()
    drawPlayer()
    testForEdges()
+end
+function reset()
+   t = 0
+   loadPlayer()
+   loadEnemies()
+   loadProjectiles()
+   function love.update(dt)
+      updateUI()
+      updateProjectiles()
+      updatePlayer(dt)
+      updateEnemies()
+      t = t + 1
+   end
+   function love.draw()
+      drawUI()
+      drawProjectiles()
+      drawEnemies()
+      drawPlayer()
+      testForEdges()
+   end
 end
