@@ -1,8 +1,8 @@
 function loadPlayer()
   player = {
       angle=math.pi,
-      x=love.graphics.getWidth() / 2,
-      y=love.graphics.getHeight() / 2,
+      x=(love.graphics.getWidth() / 2) * scaleX,
+      y=(love.graphics.getHeight() / 2) * scaleY,
       yVelocity=0,
       xVelocity=0,
       decceleration=0.025,
@@ -12,7 +12,8 @@ function loadPlayer()
       fireRate=15,
       projectileSpeed=35,
       ship = "standard",
-      lastShot=-15
+      lastShot=-15,
+      thrust = 0
     }
   baseRocket = love.graphics.newMesh({{-20, -20, 0, 0, 85, 255, 0}, {20, -20, 0, 0, 85, 255, 0}, {20, 50, 0, 0, 85, 255, 0}, {-20, 50, 0, 0, 85, 255, 0}, {-40, -20, 0, 0, 0, 255, 191}, {-20, 20, 0, 0, 0, 255, 191}, {-20, -20, 0, 0, 0, 255, 191}, {40, -20, 0, 0, 0, 255, 191}, {20, 20, 0, 0, 0, 255, 191}, {20, -20, 0, 0, 0, 255, 191}}, "triangles", "static")
   baseRocket:setVertexMap(1, 2, 3, 1, 3, 4, 5, 6, 7, 8, 9, 10)
