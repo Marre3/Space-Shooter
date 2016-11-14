@@ -40,7 +40,7 @@ function spawnEnemy(size, speed)
          break
       end
    end
-   enemy.angle = math.random(0, 2 * math.pi)
+   enemy.angle = math.random(0, 200 * math.pi)/100
    enemy.size = size
    enemy.speed = speed
 
