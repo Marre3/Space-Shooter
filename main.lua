@@ -32,7 +32,6 @@ function love.load()
       buttonColor={255, 102, 0}--,
 --		Projectile:mixColor(255, 63, 63)
    }
-   projectiles = {}
    loadPlayer()
    loadEnemies()
    loadProjectiles()
@@ -74,7 +73,6 @@ function love.update(dt)
    updatePlayer(dt)
    updateEnemies()
    t = t + 1
---		sleep(0.01)
 end
 function love.draw()
    drawUI()
