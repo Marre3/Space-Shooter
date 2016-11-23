@@ -70,7 +70,7 @@ function updatePlayer(dt)
 --		player.x = player.x - (math.sin(player.angle) * player.thrust)
 
    if love.keyboard.isDown("space") and t - player.lastShot > player.fireRate then
-      fireProjectile(player.x, player.y, player.angle, 20, player.projectileSpeed, true)
+      fireProjectile(player.x - math.sin(player.angle) * 75, player.y + math.cos(player.angle) * 75, player.angle, 20, player.projectileSpeed, true)
       player.lastShot = t
    end
 end

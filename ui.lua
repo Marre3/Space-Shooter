@@ -29,7 +29,7 @@ function drawTextBoxes()
       "enemies:" .. #enemies,
 --		 changeShipCurrentFrame,
 --		 lastChangeShip,
-		 t,  
+		 t
 	}
 	if showTextBoxes == true then
       love.graphics.scale(2 / scaleX, 2 / scaleY)
